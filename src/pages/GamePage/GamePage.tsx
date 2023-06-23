@@ -24,11 +24,17 @@ export const GamePage: FC = () => {
     'dog',
   ]
 
+  const shuffleIcons = (array: string[]) => {
+    return array.sort(() => Math.random() - 0.5)
+  }
+
+  const shuffledCardIcons = shuffleIcons(cardIcons)
+
   return (
     <GamePageWrapper>
       <CenteredContent>
         <Container>
-          {cardIcons.map((icon, index) => (
+          {shuffledCardIcons.map((icon, index) => (
             <Card selected key={index} icon={icon}></Card>
           ))}
         </Container>
