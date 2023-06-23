@@ -1,4 +1,3 @@
-import { Colors } from '@/constants/styles'
 import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 
