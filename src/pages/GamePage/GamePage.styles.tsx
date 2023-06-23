@@ -20,9 +20,4 @@ export const LighningBoltIcon = styled(BoltIcon)`
   transition: 400ms;
   opacity: 0.9;
   background: ${Colors.White};
-
-  &:hover {
-    transform: scale(1.2);
-    opacity: 1;
-  }
 `

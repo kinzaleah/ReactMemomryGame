@@ -1,14 +1,27 @@
 import { LighningBoltIcon } from '@/pages/GamePage/GamePage.styles'
 import { FC } from 'react'
-import { CardDiv } from './Card.styles'
+import { CardBack, CardDiv, CardFront, CardInner, Emoji } from './Card.styles'
 
 interface Props {
   selected?: boolean
-  icon: string
+  name: string
+  image: string
+  onSelect: () => void
 }
 
 export const Card: FC<Props> = (props: Props) => {
-  const { selected, icon } = props
+  const { selected, name, image, onSelect } = props
 
-  return <CardDiv>{selected ? icon : <LighningBoltIcon />}</CardDiv>
+  return (
+    <CardDiv onClick={onSelect}>
+      <CardInner className={selected ? 'flipped' : ''}>
+        <CardFront>
+          <LighningBoltIcon />
+        </CardFront>
+        <CardBack>
+          <Emoji>{image}</Emoji>
+        </CardBack>
+      </CardInner>
+    </CardDiv>
+  )
 }
