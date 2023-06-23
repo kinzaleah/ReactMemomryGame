@@ -1,6 +1,6 @@
 import { Colors } from '@/constants/styles'
 import styled from '@emotion/styled'
-import RocketLaunchIcon from '@mui/icons-material/RocketLaunch'
+import BoltIcon from '@mui/icons-material/Bolt'
 
 export const MainPageWrapper = styled.main`
   height: 100vh;
@@ -8,13 +8,13 @@ export const MainPageWrapper = styled.main`
   overflow: hidden;
 `
 
-export const RocketIcon = styled(RocketLaunchIcon)`
+export const LightningBoltIcon = styled(BoltIcon)`
   font-size: 10em;
   margin-top: 10px;
   padding: 20px;
   border: 4px solid ${Colors.MidnightGreen};
   border-radius: 50%;
-  fill: ${Colors.MidnightGreen};
+  fill: ${Colors.Gamboge};
   overflow: initial;
   cursor: pointer;
   transition: 400ms;

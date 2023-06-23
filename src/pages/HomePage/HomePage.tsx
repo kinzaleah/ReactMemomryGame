@@ -2,7 +2,7 @@ import { FC } from 'react'
 import { Typography } from '@mui/material'
 import { CenteredContent } from '@/components/CenteredContent/CenteredContent'
 import { Colors } from '@/constants/styles'
-import { MainPageWrapper, RocketIcon } from './HomePage.styles'
+import { MainPageWrapper, LightningBoltIcon } from './HomePage.styles'
 import { Link } from 'react-router-dom'
 
 export const HomePage: FC = () => (
@@ -16,7 +16,7 @@ export const HomePage: FC = () => (
       </Typography>
 
       <Link to="/game">
-        <RocketIcon></RocketIcon>
+        <LightningBoltIcon></LightningBoltIcon>
       </Link>
     </CenteredContent>
   </MainPageWrapper>

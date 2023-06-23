@@ -5,40 +5,40 @@ import { Card } from '@/components/Card/Card'
 import { Container } from '@/components/Card/Card.styles'
 
 export const GamePage: FC = () => {
-  const cardIcons = useMemo(
-    () => [
-      {
-        index: '1',
-        name: 'koala',
-        image: '🐨',
-      },
-      { index: '2', name: 'koala', image: '🐨' },
-      { index: '3', name: 'lion', image: '🦁' },
-      { index: '4', name: 'lion', image: '🦁' },
-      { index: '5', name: 'tiger', image: '🐯' },
-      { index: '6', name: 'tiger', image: '🐯' },
-      { index: '7', name: 'shark', image: '🦈' },
-      { index: '8', name: 'shark', image: '🦈' },
-      { index: '9', name: 'elephant', image: '🐘' },
-      { index: '10', name: 'elephant', image: '🐘' },
-      { index: '11', name: 'unicorn', image: '🦄' },
-      { index: '12', name: 'unicorn', image: '🦄' },
-      { index: '13', name: 'chicken', image: '🐔' },
-      { index: '14', name: 'chicken', image: '🐔' },
-      { index: '15', name: 'dog', image: '🐶' },
-      { index: '16', name: 'dog', image: '🐶' },
-    ],
-    []
-  )
+  interface CardItem {
+    index: string
+    name: string
+    image: string
+  }
+  const cardIcons = [
+    {
+      index: '1',
+      name: 'koala',
+      image: '🐨',
+    },
+    { index: '2', name: 'koala', image: '🐨' },
+    { index: '3', name: 'lion', image: '🦁' },
+    { index: '4', name: 'lion', image: '🦁' },
+    { index: '5', name: 'tiger', image: '🐯' },
+    { index: '6', name: 'tiger', image: '🐯' },
+    { index: '7', name: 'shark', image: '🦈' },
+    { index: '8', name: 'shark', image: '🦈' },
+    { index: '9', name: 'elephant', image: '🐘' },
+    { index: '10', name: 'elephant', image: '🐘' },
+    { index: '11', name: 'unicorn', image: '🦄' },
+    { index: '12', name: 'unicorn', image: '🦄' },
+    { index: '13', name: 'chicken', image: '🐔' },
+    { index: '14', name: 'chicken', image: '🐔' },
+    { index: '15', name: 'dog', image: '🐶' },
+    { index: '16', name: 'dog', image: '🐶' },
+  ]
 
-  const [selectedCards, setSelectedCards] = useState<
-    { index: string; name: string; image: string }[]
-  >([])
-  const [correctPairs, setCorrectPairs] = useState<
-    { index: string; name: string; image: string }[]
-  >([])
+  const [selectedCards, setSelectedCards] = useState<CardItem[]>([])
+
+  const [correctPairs, setCorrectPairs] = useState<CardItem[]>([])
+
   const faceUpCards = [...correctPairs, ...selectedCards]
-  const shuffleIcons = (array: { index: string; name: string; image: string }[]) => {
+  const shuffleIcons = (array: CardItem[]) => {
     return array.sort(() => Math.random() - 0.5)
   }
 
@@ -54,7 +54,7 @@ export const GamePage: FC = () => {
     setSelectedCards([...selectedCards, item])
   }
 
-  const checkIfSelected = (item: { index: string; name: string; image: string }) => {
+  const checkIfSelected = (item: CardItem) => {
     return faceUpCards.includes(item)
   }
   const handleCorrectPair = async () => {
