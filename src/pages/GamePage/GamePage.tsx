@@ -2,22 +2,17 @@ import { FC } from 'react'
 import { Typography } from '@mui/material'
 import { CenteredContent } from '@/components/CenteredContent/CenteredContent'
 import { Colors } from '@/constants/styles'
-import { MainPageWrapper, RocketIcon } from './HomePage.styles'
-import { Link } from 'react-router-dom'
+import { GamePageWrapper } from './GamePage.styles'
 
-export const HomePage: FC = () => (
-  <MainPageWrapper>
+export const GamePage: FC = () => (
+  <GamePageWrapper>
     <CenteredContent>
       <Typography variant="h4" fontWeight={800} color={[Colors.RichBlack]}>
-        Memory Game
+        Game Page
       </Typography>
       <Typography variant="subtitle1" fontWeight={600} color={Colors.Rufous}>
-        KD & GK
+        Cards will go here
       </Typography>
-
-      <Link to="/game">
-        <RocketIcon></RocketIcon>
-      </Link>
     </CenteredContent>
-  </MainPageWrapper>
+  </GamePageWrapper>
 )
