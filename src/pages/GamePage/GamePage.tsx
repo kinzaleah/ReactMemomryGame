@@ -1,18 +1,38 @@
 import { FC } from 'react'
-import { Typography } from '@mui/material'
 import { CenteredContent } from '@/components/CenteredContent/CenteredContent'
-import { Colors } from '@/constants/styles'
 import { GamePageWrapper } from './GamePage.styles'
+import { Card } from '@/components/Card/Card'
+import { Container } from '@/components/Card/Card.styles'
 
-export const GamePage: FC = () => (
-  <GamePageWrapper>
-    <CenteredContent>
-      <Typography variant="h4" fontWeight={800} color={[Colors.RichBlack]}>
-        Game Page
-      </Typography>
-      <Typography variant="subtitle1" fontWeight={600} color={Colors.Rufous}>
-        Cards will go here
-      </Typography>
-    </CenteredContent>
-  </GamePageWrapper>
-)
+export const GamePage: FC = () => {
+  const cardIcons = [
+    'koala',
+    'koala',
+    'lion',
+    'lion',
+    'tiger',
+    'tiger',
+    'shark',
+    'shark',
+    'elephant',
+    'elephant',
+    'unicorn',
+    'unicorn',
+    'chicken',
+    'chicken',
+    'dog',
+    'dog',
+  ]
+
+  return (
+    <GamePageWrapper>
+      <CenteredContent>
+        <Container>
+          {cardIcons.map((icon, index) => (
+            <Card selected key={index} icon={icon}></Card>
+          ))}
+        </Container>
+      </CenteredContent>
+    </GamePageWrapper>
+  )
+}

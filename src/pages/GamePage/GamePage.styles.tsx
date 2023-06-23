@@ -1,6 +1,6 @@
 import { Colors } from '@/constants/styles'
 import styled from '@emotion/styled'
-import RocketLaunchIcon from '@mui/icons-material/RocketLaunch'
+import BoltIcon from '@mui/icons-material/Bolt'
 
 export const GamePageWrapper = styled.main`
   height: 100vh;
@@ -8,10 +8,10 @@ export const GamePageWrapper = styled.main`
   overflow: hidden;
 `
 
-export const RocketIcon = styled(RocketLaunchIcon)`
-  font-size: 10em;
-  margin-top: 10px;
-  padding: 20px;
+export const LighningBoltIcon = styled(BoltIcon)`
+  font-size: 6em;
+  // margin-top: 10px;
+  // padding: 20px;
   border: 4px solid ${Colors.MidnightGreen};
   border-radius: 50%;
   fill: ${Colors.MidnightGreen};
@@ -22,7 +22,7 @@ export const RocketIcon = styled(RocketLaunchIcon)`
   background: ${Colors.White};
 
   &:hover {
-    transform: scale(2.5);
+    transform: scale(1.2);
     opacity: 1;
   }
 `
